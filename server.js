@@ -25,7 +25,7 @@ app.use(body_parser_1.default.json());
 //   res.send('home!');
 // })
 app.get('/api/test', (req, res) => {
-    console.log("api/test");
+    // console.log("api/test");
     res.send('CORS is working on subdomain!');
 });
 // Connect to database
