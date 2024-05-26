@@ -19,24 +19,24 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  console.log("running");
-  res.send('home!');
-})
+// app.get("/", (req, res) => {
+//   console.log("running");
+//   res.send('home!');
+// })
 app.get('/api/test', (req, res) => {
   console.log("api/test")
   res.send('CORS is working on subdomain!');
 });
 // Connect to database
-// dbConnect();
+dbConnect();
 
 // Routes
-// app.use('/api/deluxe', deluxeRoutes);
-// app.use('/api/aromatic', aromaticRoutes);
-// app.use('/api/steading', steadingRoutes);
-// app.use('/api/webhook', checkoutRoutes);
-// app.use('/api', menuRoutes);
-// app.use('/api/auth', userRoutes);
+app.use('/api/deluxe', deluxeRoutes);
+app.use('/api/aromatic', aromaticRoutes);
+app.use('/api/steading', steadingRoutes);
+app.use('/api/webhook', checkoutRoutes);
+app.use('/api', menuRoutes);
+app.use('/api/auth', userRoutes);
 
 // Start server
 app.listen(PORT, () => {
