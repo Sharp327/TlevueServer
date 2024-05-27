@@ -7,8 +7,7 @@ export const getMenuController = async (
   res: Response
 ) => {
   try {
-    console.log('Data seeded successfully!1');
-    const menus = await getMenuService()
+    const menus = await getMenuService(req.query.pagetype)
     return res.status(201).json({
       menus,
     })

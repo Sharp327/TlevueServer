@@ -1,5 +1,6 @@
 export type User = {
-  name: string
+  firstName: string
+  lastName: string
   email: string
   password: string
   avatar?: { public_id: string; url: string }

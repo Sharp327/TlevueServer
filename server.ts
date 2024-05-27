@@ -35,9 +35,8 @@ app.use('/api/deluxe', deluxeRoutes);
 app.use('/api/aromatic', aromaticRoutes);
 app.use('/api/steading', steadingRoutes);
 app.use('/api/webhook', checkoutRoutes);
-app.use('/api', menuRoutes);
+app.use('/api/menu', menuRoutes);
 app.use('/api/auth', userRoutes);
-
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -3,6 +3,6 @@ import { getMenuController } from '../controllers/MenuController';
 
 const router = Router();
 
-router.post('/getmenu', getMenuController);
+router.get('/getMenu', getMenuController);
 
 export default router;

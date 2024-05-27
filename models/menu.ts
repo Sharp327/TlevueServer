@@ -1,25 +1,21 @@
 import mongoose, { Schema, Model } from 'mongoose'
-import { IChild, IMenu } from '../types/Menu'; // Update with your path
+import { IMenu } from '../types/Menu';
 
-// Schema for nested children
-const ChildSchema = new Schema<IChild>({
-  title: { type: String, required: true },
+const menuItemSchema = new Schema({
+  path: { type: String, required: false },
+  title: { type: String },
   type: { type: String, required: true },
-  path: { type: String, default: '' },
-  megaMenu: { type: Boolean, default: false },
-  children: [{ type: Schema.Types.ObjectId, ref: 'Child' }], // Reference the same model for recursion
+  children: [this]
 });
 
-// Main menu schema
-const MenuSchema = new Schema<IMenu>({
+const menuSchema: Schema<IMenu> = new Schema({
   title: { type: String, required: true },
   type: { type: String, required: true },
-  megaMenu: { type: Boolean, default: false },
-  children: [{ type: Schema.Types.ObjectId, ref: 'Child' }], // Reference the Child schema
+  megaMenu: { type: Boolean },
+  children: [menuItemSchema],
+  pagetype: { type: String, required: true }
 });
 
-// Create models
-const Child = mongoose.model<IChild>('Child', ChildSchema);
-const Menu = mongoose.model<IMenu>('Menu', MenuSchema);
-
-export { Child, Menu };
+const Menu: Model<IMenu> =
+  mongoose.models.Menu || mongoose.model<IMenu>('Menu', menuSchema)
+export default Menu

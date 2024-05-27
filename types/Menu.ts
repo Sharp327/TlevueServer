@@ -19,10 +19,11 @@ export interface IChild {
 
 // Main menu interface
 export interface IMenu {
-  title: string;
+  title: any;
   type: string;
-  megaMenu?: boolean;
-  children?: IChild[]; // Nested children
+  megaMenu: boolean;
+  children?: any; // Nested children
+  pagetype: string;
 }
 
 // Interface for Mongoose document with embedded sub-documents

@@ -3,7 +3,11 @@ import bcrypt from 'bcryptjs'
 import { User } from '../types/User'
 
 const userSchema: Schema<User> = new Schema({
-  name: {
+  firstName: {
+    type: String,
+    required: [true, 'Please enter your name'],
+  },
+  lastName: {
     type: String,
     required: [true, 'Please enter your name'],
   },
@@ -16,7 +20,6 @@ const userSchema: Schema<User> = new Schema({
     type: String,
     required: [true, 'Please enter your password'],
     minLength: [6, 'Your password must be longer than 6 characters'],
-    select: false,
   },
   avatar: {
     public_id: String,
@@ -30,13 +33,6 @@ const userSchema: Schema<User> = new Schema({
     type: Date,
     default: Date.now,
   },
-})
-
-userSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) {
-    next()
-  }
-  this.password = await bcrypt.hash(this.password, 10)
 })
 
 const User: Model<User> =
