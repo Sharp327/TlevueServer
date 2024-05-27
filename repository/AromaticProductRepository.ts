@@ -13,7 +13,7 @@ export const getProductsRepository = async () => {
 }
 
 export const getProductsByCategoryRepository = async (filterData: { pricemin: any; pricemax: any; scent: string; color: string; category: string }) => {
-  insertProduct();
+  // insertProduct();
   const pricemin = filterData.pricemin ? filterData.pricemin : '';
   const pricemax = filterData.pricemax ? filterData.pricemax : '';
   const scentList = filterData.scent ? filterData.scent.split(',') : [];

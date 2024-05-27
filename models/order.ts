@@ -1,7 +1,7 @@
 import mongoose, { Schema, Model } from 'mongoose'
 import { Product } from '../types/Product';
 
-const productSchema: Schema<Product> = new Schema({
+const orderSchema: Schema<Product> = new Schema({
   title: {
     type: String,
     required: [true, 'Please enter your title'],
@@ -79,6 +79,6 @@ const productSchema: Schema<Product> = new Schema({
   },
 })
 
-const Product: Model<Product> =
-  mongoose.models.Product || mongoose.model<Product>('Product', productSchema)
-export default Product
+const Order: Model<Product> =
+  mongoose.models.Product || mongoose.model<Product>('Order', orderSchema)
+export default Order

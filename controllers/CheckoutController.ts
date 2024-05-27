@@ -1,8 +1,10 @@
 import { Request, Response } from 'express'
 import crypto from 'crypto';
-const webhookSecret = "EJ-oQDbYyqCXK6jSoyXe_0krlh75IXzED4WmkibzoZHsxjyXY_hOt7GJYg2E3RnobpzmR4xOeHbN-Qtu";
+const webhookSecret = "EB3HOX498EOhuSqV3Ev_YFCmAcyp8z43zmS57Lm2p4GOpxwRLU41KI_Jf5b_d2nHQTu3KEAQJjXsWMRm";
 import onError from '../middlewares/errors'
 import { PayLog } from '../models/payLog';
+import { Product } from '../types/Product';
+import Order from '../models/order';
 
 export const CheckoutController = async (req: Request, res: Response) => {
   try {
@@ -47,3 +49,51 @@ export const CheckoutController = async (req: Request, res: Response) => {
     onError(error, req, res)
   }
 };
+
+export const AddOrderItemController = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const {cartItems, userid} = req.body;
+    await saveOrdersData({...cartItems, userid});
+
+    // const user = await registerUserService(req.body as Product)
+    return res.status(201).json({
+      // user,
+    })
+  } catch (error: any) {
+    onError(error, req, res)
+  }
+}
+
+
+export const getOrderItemController = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const {cartItems} = req.body;
+    await saveOrdersData(cartItems);
+
+    // const user = await registerUserService(req.body as Product)
+    return res.status(201).json({
+      // user,
+    })
+  } catch (error: any) {
+    onError(error, req, res)
+  }
+}
+
+
+async function saveOrdersData(cartItems: any) {
+  for (const item of cartItems) {
+    const newOrder = new Order(item);
+    try {
+      await newOrder.save();
+      console.log(`Saved: ${item.title}`);
+    } catch (error) {
+      console.error(`Error saving ${item.title}: `, error);
+    }
+  }
+}

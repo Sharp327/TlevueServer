@@ -30,3 +30,19 @@ export const signInUserController = async (
     onError(error, req, res)
   }
 }
+
+
+export const updateUserController = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    // const user = await signInUserService(req.body as User)
+    // return res.status(201).json({
+    //   user,
+    // })
+  } catch (error: any) {
+    onError(error, req, res)
+  }
+}
+

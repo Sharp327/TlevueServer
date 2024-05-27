@@ -25,7 +25,7 @@ const getProductsRepository = () => __awaiter(void 0, void 0, void 0, function* 
 });
 exports.getProductsRepository = getProductsRepository;
 const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0, void 0, function* () {
-    (0, exports.insertProduct)();
+    // insertProduct();
     const pricemin = filterData.pricemin ? filterData.pricemin : '';
     const pricemax = filterData.pricemax ? filterData.pricemax : '';
     const scentList = filterData.scent ? filterData.scent.split(',') : [];

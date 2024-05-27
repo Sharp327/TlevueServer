@@ -12,11 +12,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckoutController = void 0;
+exports.getOrderItemController = exports.AddOrderItemController = exports.CheckoutController = void 0;
 const crypto_1 = __importDefault(require("crypto"));
-const webhookSecret = "EJ-oQDbYyqCXK6jSoyXe_0krlh75IXzED4WmkibzoZHsxjyXY_hOt7GJYg2E3RnobpzmR4xOeHbN-Qtu";
+const webhookSecret = "EB3HOX498EOhuSqV3Ev_YFCmAcyp8z43zmS57Lm2p4GOpxwRLU41KI_Jf5b_d2nHQTu3KEAQJjXsWMRm";
 const errors_1 = __importDefault(require("../middlewares/errors"));
 const payLog_1 = require("../models/payLog");
+const order_1 = __importDefault(require("../models/order"));
 const CheckoutController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log('webhook');
@@ -57,3 +58,45 @@ const CheckoutController = (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
 });
 exports.CheckoutController = CheckoutController;
+const AddOrderItemController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { cartItems, userid } = req.body;
+        yield saveOrdersData(Object.assign(Object.assign({}, cartItems), { userid }));
+        // const user = await registerUserService(req.body as Product)
+        return res.status(201).json({
+        // user,
+        });
+    }
+    catch (error) {
+        (0, errors_1.default)(error, req, res);
+    }
+});
+exports.AddOrderItemController = AddOrderItemController;
+const getOrderItemController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { cartItems } = req.body;
+        yield saveOrdersData(cartItems);
+        // const user = await registerUserService(req.body as Product)
+        return res.status(201).json({
+        // user,
+        });
+    }
+    catch (error) {
+        (0, errors_1.default)(error, req, res);
+    }
+});
+exports.getOrderItemController = getOrderItemController;
+function saveOrdersData(cartItems) {
+    return __awaiter(this, void 0, void 0, function* () {
+        for (const item of cartItems) {
+            const newOrder = new order_1.default(item);
+            try {
+                yield newOrder.save();
+                console.log(`Saved: ${item.title}`);
+            }
+            catch (error) {
+                console.error(`Error saving ${item.title}: `, error);
+            }
+        }
+    });
+}

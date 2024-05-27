@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.signInUserController = exports.registerUserController = void 0;
+exports.updateUserController = exports.signInUserController = exports.registerUserController = void 0;
 const UserService_1 = require("../services/UserService");
 const errors_1 = __importDefault(require("../middlewares/errors"));
 const registerUserController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -39,3 +39,15 @@ const signInUserController = (req, res) => __awaiter(void 0, void 0, void 0, fun
     }
 });
 exports.signInUserController = signInUserController;
+const updateUserController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // const user = await signInUserService(req.body as User)
+        // return res.status(201).json({
+        //   user,
+        // })
+    }
+    catch (error) {
+        (0, errors_1.default)(error, req, res);
+    }
+});
+exports.updateUserController = updateUserController;
