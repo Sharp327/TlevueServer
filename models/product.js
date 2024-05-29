@@ -77,14 +77,21 @@ const productSchema = new mongoose_1.Schema({
     },
     laceSize: (Array),
     destiny: (Array),
+    selectedDestiny: {
+        type: String,
+    },
     length: (Array),
+    selectedLength: {
+        type: String,
+    },
     color: {
         type: String,
         default: 'Natural Color',
     },
+    availableTextures: (Array),
     texture: {
         type: String,
-        default: 'Body Wave',
+        default: 'HD Lace',
     },
     hairType: {
         type: String,

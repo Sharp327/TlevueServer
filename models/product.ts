@@ -59,14 +59,21 @@ const productSchema: Schema<Product> = new Schema({
   },
   laceSize: Array<String>,
   destiny: Array<String>,
-  length: Array<Number>,
+  selectedDestiny: {
+    type: String,
+  },
+  length: Array<String>,
+  selectedLength: {
+    type: String,
+  },
   color: {
     type: String,
     default: 'Natural Color',
   },
+  availableTextures: Array<String>,
   texture: {
     type: String,
-    default: 'Body Wave',
+    default: 'HD Lace',
   },
   hairType: {
     type: String,

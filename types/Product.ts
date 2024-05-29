@@ -35,8 +35,11 @@ type Product = {
   laceType: string;
   laceSize: Array<String>;
   destiny: Array<String>;
-  length: Array<Number>;
+  selectedDestiny: string;
+  length: Array<String>;
+  selectedLength: string;
   color: string;
+  availableTextures: Array<String>;
   texture: string;
   hairType: string;
   categorylist: string[];
