@@ -54,15 +54,16 @@ const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0
     if (hairColorList.length > 0) {
         conditions.push({ color: { $in: hairColorList } });
     }
-    const query = {
-        categorylist: {
+    const query = {};
+    if (categoryList.length > 0) {
+        query.categorylist = {
             $in: categoryList, // Primary condition
-        },
-    };
+        };
+    }
     if (conditions.length > 0) {
         query.$or = conditions; // Add the $or condition only if there are conditions to apply
     }
-    // console.log(query);
+    console.log(query);
     // Query the products with the appropriate conditions
     const products = yield product_1.default.find(query);
     return products;
@@ -85,7 +86,7 @@ function saveProductData(productData) {
 const insertProduct = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // Create a new product instance with the desired data
-        // const insertProductlist = [];
+        //   const insertProductlist = [];
         // await saveProductData(insertProductlist);
         // const newProduct = new Product({
         //   title: 'Straight Hair',

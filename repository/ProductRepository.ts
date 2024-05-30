@@ -51,22 +51,24 @@ export const getProductsByCategoryRepository = async (filterData: { laceTexture:
   }
 
   type QueryType = {
-    categorylist: {
+    categorylist?: {
       $in: any[];
     };
     $or?: any[]; // Make the `$or` property optional
   };
 
-  const query: QueryType = {
-    categorylist: {
+  const query: QueryType = {};
+
+  if(categoryList.length > 0){
+    query.categorylist = {
       $in: categoryList, // Primary condition
-    },
-  };
+    };
+  }
 
   if (conditions.length > 0) {
     query.$or = conditions; // Add the $or condition only if there are conditions to apply
   }
-// console.log(query);
+console.log(query);
   // Query the products with the appropriate conditions
   const products = await Product.find(query);
 
@@ -88,7 +90,7 @@ async function saveProductData(productData: any) {
 export const insertProduct = async () => {
   try {
     // Create a new product instance with the desired data
-    // const insertProductlist = [];
+  //   const insertProductlist = [];
 
     // await saveProductData(insertProductlist);
 
