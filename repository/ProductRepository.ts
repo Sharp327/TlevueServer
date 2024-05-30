@@ -13,7 +13,7 @@ export const getProductsRepository = async () => {
 }
 
 export const getProductsByCategoryRepository = async (filterData: { laceTexture: string; laceSize: string; hairTexture: string; density: string; hairLength: string; hairColor: string; category: string }) => {
-  insertProduct();
+  // insertProduct();
   // Define the split arrays for additional filtering
   const laceTextureList = filterData.laceTexture ? filterData.laceTexture.split(',') : [];
   const laceSizeList = filterData.laceSize ? filterData.laceSize.split(',') : [];
