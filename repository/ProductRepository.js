@@ -56,9 +56,12 @@ const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0
     }
     const query = {};
     if (categoryList.length > 0) {
-        query.categorylist = {
-            $in: categoryList, // Primary condition
-        };
+        conditions.push({ categorylist: {
+                $in: categoryList, // Primary condition
+            } });
+        // query.categorylist = {
+        //   $in: categoryList, // Primary condition
+        // };
     }
     if (conditions.length > 0) {
         query.$or = conditions; // Add the $or condition only if there are conditions to apply

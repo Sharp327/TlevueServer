@@ -60,9 +60,12 @@ export const getProductsByCategoryRepository = async (filterData: { laceTexture:
   const query: QueryType = {};
 
   if(categoryList.length > 0){
-    query.categorylist = {
+    conditions.push({categorylist : {
       $in: categoryList, // Primary condition
-    };
+    }})
+    // query.categorylist = {
+    //   $in: categoryList, // Primary condition
+    // };
   }
 
   if (conditions.length > 0) {
