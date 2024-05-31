@@ -41,6 +41,8 @@ type Product = {
   color: string;
   availableTextures: Array<String>;
   texture: string;
+  closureLength?: Array<String>;
+  selectedClosureLength?: string;
   hairType: string;
   categorylist: string[];
 }

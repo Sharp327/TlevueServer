@@ -75,6 +75,11 @@ const productSchema: Schema<Product> = new Schema({
     type: String,
     default: 'HD Lace',
   },
+  closureLength: Array<String>,
+  selectedClosureLength: {
+    type: String,
+    default: '14',
+  },
   hairType: {
     type: String,
     default: '100% Virgin Human Hair',

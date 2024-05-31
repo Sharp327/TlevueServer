@@ -93,6 +93,11 @@ const productSchema = new mongoose_1.Schema({
         type: String,
         default: 'HD Lace',
     },
+    closureLength: (Array),
+    selectedClosureLength: {
+        type: String,
+        default: '14',
+    },
     hairType: {
         type: String,
         default: '100% Virgin Human Hair',
