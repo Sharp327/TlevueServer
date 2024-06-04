@@ -6,4 +6,5 @@ const router = (0, express_1.Router)();
 router.post('/bycategory', ProductController_1.getProductsByCategoryController);
 router.get('/products/:id', ProductController_1.getProductController);
 router.post('/products', ProductController_1.getProductsController);
+router.put('/products/:id', ProductController_1.putProductsController);
 exports.default = router;

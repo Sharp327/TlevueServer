@@ -33,7 +33,7 @@ type Product = {
   total: number;
   rate: number;
   laceType: string;
-  laceSize: Array<String>;
+  laceSize: String;
   destiny: Array<String>;
   selectedDestiny: string;
   length: Array<String>;
@@ -41,8 +41,12 @@ type Product = {
   color: string;
   availableTextures: Array<String>;
   texture: string;
-  closureLength?: Array<String>;
-  selectedClosureLength?: string;
+  closureLength: Array<String>;
+  selectedClosureLength: string;
+  frontalLength: Array<String>;
+  selectedFrontalLength: string;
+  capSize: Array<String>;
+  selectedCapSize?: string;
   hairType: string;
   categorylist: string[];
 }

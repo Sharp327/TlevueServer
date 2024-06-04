@@ -47,26 +47,6 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                         type: "sub",
                         children: [
                             {
-                                path: "Bye-Bye knots Wigs",
-                                title: "Bye-Bye knots Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "13x4 Pre-Everything Wigs",
-                                title: "13x4 Pre-Everything Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Put On And Go Wigs",
-                                title: "Put On And Go Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Vpart Wigs",
-                                title: "Vpart Wigs",
-                                type: "link"
-                            },
-                            {
                                 path: "Glueless Wigs",
                                 title: "Glueless Wigs",
                                 type: "link"
@@ -96,155 +76,33 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                 megaMenu: true,
                 children: [
                     {
-                        title: "Hot Choice",
+                        title: "By Density",
                         type: "sub",
                         children: [
                             {
-                                path: "7x5 Bye-Bye Knote Wigs",
-                                title: "7x5 Bye-Bye Knote Wigs",
+                                path: "150% Density",
+                                title: "150% Density",
                                 type: "link"
                             },
                             {
-                                path: "13x4 Pre-Everything Wigs",
-                                title: "13x4 Pre-Everything Wigs",
+                                path: "180% Density",
+                                title: "180% Density",
                                 type: "link"
                             },
                             {
-                                path: "Put On & Go Wigs",
-                                title: "Put On & Go Wigs",
+                                path: "200% Density and High",
+                                title: "200% Density and High",
                                 type: "link"
                             },
                             {
-                                path: "U part Wigs",
-                                title: "U part Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Glueless HD Wigs(40% OFF)",
-                                title: "Glueless HD Wigs(40% OFF)",
-                                type: "link"
-                            },
-                            {
-                                path: "Colored Wigs",
-                                title: "Colored Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Raw Virgin Hair",
-                                title: "Raw Virgin Hair",
-                                type: "link"
-                            },
-                            {
-                                path: "Machine Made Wigs",
-                                title: "Machine Made Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Headband Wigs",
-                                title: "Headband Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Bob Wigs",
-                                title: "Bob Wigs",
+                                path: "Deluxe Custom",
+                                title: "Deluxe Custom",
                                 type: "link"
                             }
                         ]
                     },
                     {
-                        title: "Lace Design",
-                        type: "sub",
-                        children: [
-                            {
-                                path: "Vpart Wigs",
-                                title: "Vpart Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Lace Frontal Wigs",
-                                title: "Lace Frontal Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "13x6 Lace Front Wigs",
-                                title: "13x6 Lace Front Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "360 Lace Frontal Wigs",
-                                title: "360 Lace Frontal Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Full Lace Wigs",
-                                title: "Full Lace Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "6x4.5 Pre-Cut Lace Wigs",
-                                title: "6x4.5 Pre-Cut Lace Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "Lace Part Wigs",
-                                title: "Lace Part Wigs",
-                                type: "link"
-                            },
-                            {
-                                path: "4x4 Closure Wigs",
-                                title: "4x4 Closure Wigs",
-                                type: "link"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                title: "Closures & Frontals",
-                type: "sub",
-                megaMenu: true,
-                children: [
-                    {
-                        title: "Closures",
-                        type: "sub",
-                        children: [
-                            {
-                                path: "5x5 Lace Closure",
-                                title: "5x5 Lace Closure",
-                                type: "link"
-                            },
-                            {
-                                path: "13x5 Lace Closure",
-                                title: "13x5 Lace Closure",
-                                type: "link"
-                            }
-                        ]
-                    },
-                    {
-                        title: "Frontals",
-                        type: "sub",
-                        children: [
-                            {
-                                path: "13x5 Lace Frontal",
-                                title: "13x5 Lace Frontal",
-                                type: "link"
-                            },
-                            {
-                                path: "13x4 Lace Frontal",
-                                title: "13x4 Lace Frontal",
-                                type: "link"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                title: "Hair Bundles",
-                type: "sub",
-                megaMenu: true,
-                children: [
-                    {
-                        title: "Bundles",
+                        title: "By Texture",
                         type: "sub",
                         children: [
                             {
@@ -258,13 +116,18 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                                 type: "link"
                             },
                             {
-                                path: "Curly Hair",
-                                title: "Curly Hair",
+                                path: "Water Wave",
+                                title: "Water Wave",
                                 type: "link"
                             },
                             {
                                 path: "Deep Wave",
                                 title: "Deep Wave",
+                                type: "link"
+                            },
+                            {
+                                path: "Curly Hair",
+                                title: "Curly Hair",
                                 type: "link"
                             },
                             {
@@ -278,8 +141,140 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                                 type: "link"
                             },
                             {
-                                path: "Natural Wave",
-                                title: "Natural Wave",
+                                path: "Kinky Curly",
+                                title: "Kinky Curly",
+                                type: "link"
+                            },
+                            {
+                                path: "Kinky Straight",
+                                title: "Kinky Straight",
+                                type: "link"
+                            },
+                            {
+                                path: "Funmi Hair",
+                                title: "Funmi Hair",
+                                type: "link"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Closures & Frontals",
+                type: "sub",
+                megaMenu: true,
+                children: [
+                    {
+                        title: "By Lace",
+                        type: "sub",
+                        children: [
+                            {
+                                path: "4x4 Lace Closure",
+                                title: "4x4 Lace Closure",
+                                type: "link"
+                            },
+                            {
+                                path: "13x4 Frontal",
+                                title: "13x4 Frontal",
+                                type: "link"
+                            },
+                            {
+                                path: "5x5 Lace Closure",
+                                title: "5x5 Lace Closure",
+                                type: "link"
+                            },
+                            {
+                                path: "6x6 Lace Closure",
+                                title: "6x6 Lace Closure",
+                                type: "link"
+                            },
+                            {
+                                path: "HD Lace Closure",
+                                title: "HD Lace Closure",
+                                type: "link"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Hair Bundles",
+                type: "sub",
+                megaMenu: true,
+                children: [
+                    {
+                        title: "By Lots",
+                        type: "sub",
+                        children: [
+                            {
+                                path: "1 Bundle",
+                                title: "1 Bundle",
+                                type: "link"
+                            },
+                            {
+                                path: "3 Bundles",
+                                title: "3 Bundles",
+                                type: "link"
+                            },
+                            {
+                                path: "4 Bundles",
+                                title: "4 Bundles",
+                                type: "link"
+                            },
+                            {
+                                path: "10 Bundles",
+                                title: "10 Bundles",
+                                type: "link"
+                            },
+                            {
+                                path: "3 Bundles With Closure",
+                                title: "3 Bundles With Closure",
+                                type: "link"
+                            },
+                            {
+                                path: "3 Bundles With Frontal",
+                                title: "3 Bundles With Frontal",
+                                type: "link"
+                            },
+                            {
+                                path: "4 Bundles With Closure",
+                                title: "4 Bundles With Closure",
+                                type: "link"
+                            },
+                            {
+                                path: "4 Bundles With Frontal",
+                                title: "4 Bundles With Frontal",
+                                type: "link"
+                            },
+                            {
+                                path: "HD Closure with Bundles",
+                                title: "HD Closure with Bundles",
+                                type: "link"
+                            },
+                            {
+                                path: "HD Frontal with Bundles",
+                                title: "HD Frontal with Bundles",
+                                type: "link"
+                            },
+                            {
+                                path: "Double Drawn Bundles",
+                                title: "Double Drawn Bundles",
+                                type: "link"
+                            }
+                        ]
+                    },
+                    {
+                        title: "By Texture",
+                        type: "sub",
+                        children: [
+                            {
+                                path: "Body Wave",
+                                title: "Body Wave",
+                                type: "link"
+                            },
+                            {
+                                path: "Straight Hair",
+                                title: "Straight Hair",
                                 type: "link"
                             },
                             {
@@ -288,8 +283,38 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                                 type: "link"
                             },
                             {
+                                path: "Deep Wave",
+                                title: "Deep Wave",
+                                type: "link"
+                            },
+                            {
+                                path: "Curly Hair",
+                                title: "Curly Hair",
+                                type: "link"
+                            },
+                            {
+                                path: "Loose Deep",
+                                title: "Loose Deep",
+                                type: "link"
+                            },
+                            {
+                                path: "Loose Wave",
+                                title: "Loose Wave",
+                                type: "link"
+                            },
+                            {
+                                path: "Kinky Curly",
+                                title: "Kinky Curly",
+                                type: "link"
+                            },
+                            {
                                 path: "Kinky Straight",
                                 title: "Kinky Straight",
+                                type: "link"
+                            },
+                            {
+                                path: "Funmi Hair",
+                                title: "Funmi Hair",
                                 type: "link"
                             }
                         ]
