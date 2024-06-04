@@ -80,6 +80,16 @@ const productSchema: Schema<Product> = new Schema({
     type: String,
     default: '14',
   },
+  frontalLength: Array<String>,
+  selectedFrontalLength: {
+    type: String,
+    default: '14',
+  },
+  capSize: Array<String>,
+  selectedCapSize: {
+    type: String,
+    default: '14',
+  },
   hairType: {
     type: String,
     default: '100% Virgin Human Hair',

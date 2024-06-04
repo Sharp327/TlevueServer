@@ -98,6 +98,16 @@ const productSchema = new mongoose_1.Schema({
         type: String,
         default: '14',
     },
+    frontalLength: (Array),
+    selectedFrontalLength: {
+        type: String,
+        default: '14',
+    },
+    capSize: (Array),
+    selectedCapSize: {
+        type: String,
+        default: '14',
+    },
     hairType: {
         type: String,
         default: '100% Virgin Human Hair',
