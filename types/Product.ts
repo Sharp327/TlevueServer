@@ -32,7 +32,8 @@ type Product = {
   qty: number;
   total: number;
   rate: number;
-  laceType: string;
+  laceType: Array<String>;
+  selectedLaceType: string;
   laceSize: String;
   destiny: Array<String>;
   selectedDestiny: string;

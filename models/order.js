@@ -71,10 +71,10 @@ const orderSchema = new mongoose_1.Schema({
         type: Number,
         default: 0,
     },
-    laceType: {
+    selectedLaceType: {
         type: String,
-        default: 'HD Lace',
     },
+    laceType: (Array),
     laceSize: (Array),
     destiny: (Array),
     length: (Array),

@@ -71,9 +71,9 @@ const productSchema = new mongoose_1.Schema({
         type: Number,
         default: 0,
     },
-    laceType: {
+    laceType: (Array),
+    selectedLaceType: {
         type: String,
-        default: 'HD Lace',
     },
     laceSize: (Array),
     destiny: (Array),

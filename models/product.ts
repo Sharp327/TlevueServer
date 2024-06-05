@@ -53,9 +53,9 @@ const productSchema: Schema<Product> = new Schema({
     type: Number,
     default: 0,
   },
-  laceType: {
+  laceType: Array<String>,
+  selectedLaceType: {
     type: String,
-    default: 'HD Lace',
   },
   laceSize: Array<String>,
   destiny: Array<String>,

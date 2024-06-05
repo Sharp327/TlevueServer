@@ -53,10 +53,10 @@ const orderSchema: Schema<Product> = new Schema({
     type: Number,
     default: 0,
   },
-  laceType: {
+  selectedLaceType: {
     type: String,
-    default: 'HD Lace',
   },
+  laceType: Array<String>,
   laceSize: Array<String>,
   destiny: Array<String>,
   length: Array<Number>,
