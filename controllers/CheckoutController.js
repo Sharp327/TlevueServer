@@ -12,12 +12,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOrderItemController = exports.AddOrderItemController = exports.CheckoutController = void 0;
+exports.StripeController = exports.getOrderItemController = exports.AddOrderItemController = exports.CheckoutController = void 0;
 const crypto_1 = __importDefault(require("crypto"));
 const webhookSecret = "EB3HOX498EOhuSqV3Ev_YFCmAcyp8z43zmS57Lm2p4GOpxwRLU41KI_Jf5b_d2nHQTu3KEAQJjXsWMRm";
 const errors_1 = __importDefault(require("../middlewares/errors"));
 const payLog_1 = require("../models/payLog");
 const order_1 = __importDefault(require("../models/order"));
+const stripe_1 = __importDefault(require("stripe"));
+const secretKey = process.env.PUBLIC_STRIPE_SECRET_KEY || "";
+const stripe = new stripe_1.default(secretKey);
+const host = process.env.PUBLIC_HOST;
 const CheckoutController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log('webhook');
@@ -100,3 +104,33 @@ function saveOrdersData(cartItems) {
         }
     });
 }
+const StripeController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { amount } = req.body;
+        // await saveOrdersData(cartItems);
+        const date = new Date().toISOString();
+        const session = yield stripe.checkout.sessions.create({
+            payment_method_types: ["card"],
+            line_items: [
+                {
+                    price_data: {
+                        currency: "usd",
+                        product_data: {
+                            name: "INV-" + date,
+                        },
+                        unit_amount: amount,
+                    },
+                    quantity: 1,
+                },
+            ],
+            mode: "payment",
+            cancel_url: `${host}`,
+            success_url: `${host}/pages/order-success`,
+        });
+        return res.status(200).json({ sessionId: session.id });
+    }
+    catch (error) {
+        (0, errors_1.default)(error, req, res);
+    }
+});
+exports.StripeController = StripeController;

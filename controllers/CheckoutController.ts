@@ -5,6 +5,11 @@ import onError from '../middlewares/errors'
 import { PayLog } from '../models/payLog';
 import { Product } from '../types/Product';
 import Order from '../models/order';
+import Stripe from "stripe";
+const secretKey = process.env.PUBLIC_STRIPE_SECRET_KEY || "";
+
+const stripe = new Stripe(secretKey);
+const host = process.env.PUBLIC_HOST;
 
 export const CheckoutController = async (req: Request, res: Response) => {
   try {
@@ -95,5 +100,42 @@ async function saveOrdersData(cartItems: any) {
     } catch (error) {
       console.error(`Error saving ${item.title}: `, error);
     }
+  }
+}
+
+
+export const StripeController = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const {amount} = req.body;
+    // await saveOrdersData(cartItems);
+    
+    const date = new Date().toISOString();
+
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: "INV-" + date,
+            },
+            unit_amount: amount,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: "payment",
+      cancel_url: `${host}`,
+      success_url: `${host}/pages/order-success`,
+    });
+
+    return res.status(200).json({ sessionId: session.id });
+
+  } catch (error: any) {
+    onError(error, req, res)
   }
 }
