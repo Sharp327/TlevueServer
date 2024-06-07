@@ -5,7 +5,7 @@ import onError from '../middlewares/errors'
 import { PayLog } from '../models/payLog';
 import { Product } from '../types/Product';
 import Order from '../models/order';
-import Stripe from "stripe";
+import Stripe from 'stripe';
 const secretKey = process.env.PUBLIC_STRIPE_SECRET_KEY || "";
 
 const stripe = new Stripe(secretKey);
