@@ -19,9 +19,9 @@ const errors_1 = __importDefault(require("../middlewares/errors"));
 const payLog_1 = require("../models/payLog");
 const order_1 = __importDefault(require("../models/order"));
 const stripe_1 = __importDefault(require("stripe"));
-const secretKey = process.env.PUBLIC_STRIPE_SECRET_KEY || "";
+const secretKey = "sk_test_51JrgTaHz47FoVxKIhnTmCeehkEDRlmGiX40lvjCBERiy48AjLcRRlb1nD0ion5luM6J5Z06EeMnGBJ4Q60ZYvGWg001mQYv1aQ";
 const stripe = new stripe_1.default(secretKey);
-const host = process.env.PUBLIC_HOST;
+const host = process.env.PUBLIC_HOST || "https://tlevue.com";
 const CheckoutController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log('webhook');
@@ -118,7 +118,7 @@ const StripeController = (req, res) => __awaiter(void 0, void 0, void 0, functio
                         product_data: {
                             name: "INV-" + date,
                         },
-                        unit_amount: amount,
+                        unit_amount: amount * 100,
                     },
                     quantity: 1,
                 },

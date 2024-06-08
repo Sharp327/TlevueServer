@@ -6,10 +6,11 @@ import { PayLog } from '../models/payLog';
 import { Product } from '../types/Product';
 import Order from '../models/order';
 import Stripe from 'stripe';
-const secretKey = process.env.PUBLIC_STRIPE_SECRET_KEY || "";
+
+const secretKey = "sk_test_51JrgTaHz47FoVxKIhnTmCeehkEDRlmGiX40lvjCBERiy48AjLcRRlb1nD0ion5luM6J5Z06EeMnGBJ4Q60ZYvGWg001mQYv1aQ";
 
 const stripe = new Stripe(secretKey);
-const host = process.env.PUBLIC_HOST;
+const host = process.env.PUBLIC_HOST || "https://tlevue.com";
 
 export const CheckoutController = async (req: Request, res: Response) => {
   try {
@@ -123,7 +124,7 @@ export const StripeController = async (
             product_data: {
               name: "INV-" + date,
             },
-            unit_amount: amount,
+            unit_amount: amount * 100,
           },
           quantity: 1,
         },
