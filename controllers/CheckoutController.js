@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StripeController = exports.getOrderItemController = exports.AddOrderItemController = exports.CheckoutController = void 0;
+exports.StripeHookController = exports.StripeController = exports.getOrderItemController = exports.AddOrderItemController = exports.CheckoutController = void 0;
 const crypto_1 = __importDefault(require("crypto"));
 const webhookSecret = "EB3HOX498EOhuSqV3Ev_YFCmAcyp8z43zmS57Lm2p4GOpxwRLU41KI_Jf5b_d2nHQTu3KEAQJjXsWMRm";
 const errors_1 = __importDefault(require("../middlewares/errors"));
@@ -22,6 +22,7 @@ const stripe_1 = __importDefault(require("stripe"));
 const secretKey = "sk_test_51JrgTaHz47FoVxKIhnTmCeehkEDRlmGiX40lvjCBERiy48AjLcRRlb1nD0ion5luM6J5Z06EeMnGBJ4Q60ZYvGWg001mQYv1aQ";
 const stripe = new stripe_1.default(secretKey);
 const host = process.env.PUBLIC_HOST || "https://tlevue.com";
+const endpointSecret = "whsec_6211c5da3208c3663bbdadb1b3e80307d433107a9ba9937d1d450015dbc7aa16";
 const CheckoutController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log('webhook');
@@ -107,7 +108,6 @@ function saveOrdersData(cartItems) {
 const StripeController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { amount } = req.body;
-        // await saveOrdersData(cartItems);
         const date = new Date().toISOString();
         const session = yield stripe.checkout.sessions.create({
             payment_method_types: ["card"],
@@ -134,3 +134,73 @@ const StripeController = (req, res) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.StripeController = StripeController;
+const StripeHookController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // await saveOrdersData(cartItems);
+        const sig = req.headers['stripe-signature'];
+        let event;
+        try {
+            event = stripe.webhooks.constructEvent(req.body, sig || [], endpointSecret);
+        }
+        catch (err) {
+            res.status(400).send(`Webhook Error: ${err}`);
+            return;
+        }
+        console.log(event);
+        // Handle the event
+        switch (event.type) {
+            case 'checkout.session.async_payment_failed':
+                const checkoutSessionAsyncPaymentFailed = event.data.object;
+                // Then define and call a function to handle the event checkout.session.async_payment_failed
+                break;
+            case 'checkout.session.async_payment_succeeded':
+                const checkoutSessionAsyncPaymentSucceeded = event.data.object;
+                // Then define and call a function to handle the event checkout.session.async_payment_succeeded
+                break;
+            case 'checkout.session.completed':
+                const checkoutSessionCompleted = event.data.object;
+                // Then define and call a function to handle the event checkout.session.completed
+                break;
+            case 'checkout.session.expired':
+                const checkoutSessionExpired = event.data.object;
+                // Then define and call a function to handle the event checkout.session.expired
+                break;
+            case 'payment_method.attached':
+                const paymentMethodAttached = event.data.object;
+                // Then define and call a function to handle the event payment_method.attached
+                break;
+            case 'payment_method.automatically_updated':
+                const paymentMethodAutomaticallyUpdated = event.data.object;
+                // Then define and call a function to handle the event payment_method.automatically_updated
+                break;
+            case 'payment_method.detached':
+                const paymentMethodDetached = event.data.object;
+                // Then define and call a function to handle the event payment_method.detached
+                break;
+            case 'payment_method.updated':
+                const paymentMethodUpdated = event.data.object;
+                // Then define and call a function to handle the event payment_method.updated
+                break;
+            case 'product.created':
+                const productCreated = event.data.object;
+                // Then define and call a function to handle the event product.created
+                break;
+            case 'product.deleted':
+                const productDeleted = event.data.object;
+                // Then define and call a function to handle the event product.deleted
+                break;
+            case 'product.updated':
+                const productUpdated = event.data.object;
+                // Then define and call a function to handle the event product.updated
+                break;
+            // ... handle other event types
+            default:
+                console.log(`Unhandled event type ${event.type}`);
+        }
+        res.send();
+    }
+    catch (error) {
+        (0, errors_1.default)(error, req, res);
+    }
+});
+exports.StripeHookController = StripeHookController;

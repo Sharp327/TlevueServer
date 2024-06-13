@@ -11,6 +11,7 @@ const secretKey = "sk_test_51JrgTaHz47FoVxKIhnTmCeehkEDRlmGiX40lvjCBERiy48AjLcRR
 
 const stripe = new Stripe(secretKey);
 const host = process.env.PUBLIC_HOST || "https://tlevue.com";
+const endpointSecret = "whsec_6211c5da3208c3663bbdadb1b3e80307d433107a9ba9937d1d450015dbc7aa16";
 
 export const CheckoutController = async (req: Request, res: Response) => {
   try {
@@ -111,7 +112,6 @@ export const StripeController = async (
 ) => {
   try {
     const {amount} = req.body;
-    // await saveOrdersData(cartItems);
     
     const date = new Date().toISOString();
 
@@ -136,6 +136,82 @@ export const StripeController = async (
 
     return res.status(200).json({ sessionId: session.id });
 
+  } catch (error: any) {
+    onError(error, req, res)
+  }
+}
+
+
+export const StripeHookController = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    // await saveOrdersData(cartItems);
+    const sig = req.headers['stripe-signature'];
+
+    let event;
+  
+    try {
+      event = stripe.webhooks.constructEvent(req.body, sig||[], endpointSecret);
+    } catch (err) {
+      res.status(400).send(`Webhook Error: ${err}`);
+      return;
+    }
+
+    console.log(event);
+
+    // Handle the event
+    switch (event.type) {
+      case 'checkout.session.async_payment_failed':
+        const checkoutSessionAsyncPaymentFailed = event.data.object;
+        // Then define and call a function to handle the event checkout.session.async_payment_failed
+        break;
+      case 'checkout.session.async_payment_succeeded':
+        const checkoutSessionAsyncPaymentSucceeded = event.data.object;
+        // Then define and call a function to handle the event checkout.session.async_payment_succeeded
+        break;
+      case 'checkout.session.completed':
+        const checkoutSessionCompleted = event.data.object;
+        // Then define and call a function to handle the event checkout.session.completed
+        break;
+      case 'checkout.session.expired':
+        const checkoutSessionExpired = event.data.object;
+        // Then define and call a function to handle the event checkout.session.expired
+        break;
+      case 'payment_method.attached':
+        const paymentMethodAttached = event.data.object;
+        // Then define and call a function to handle the event payment_method.attached
+        break;
+      case 'payment_method.automatically_updated':
+        const paymentMethodAutomaticallyUpdated = event.data.object;
+        // Then define and call a function to handle the event payment_method.automatically_updated
+        break;
+      case 'payment_method.detached':
+        const paymentMethodDetached = event.data.object;
+        // Then define and call a function to handle the event payment_method.detached
+        break;
+      case 'payment_method.updated':
+        const paymentMethodUpdated = event.data.object;
+        // Then define and call a function to handle the event payment_method.updated
+        break;
+      case 'product.created':
+        const productCreated = event.data.object;
+        // Then define and call a function to handle the event product.created
+        break;
+      case 'product.deleted':
+        const productDeleted = event.data.object;
+        // Then define and call a function to handle the event product.deleted
+        break;
+      case 'product.updated':
+        const productUpdated = event.data.object;
+        // Then define and call a function to handle the event product.updated
+        break;
+      // ... handle other event types
+      default:
+        console.log(`Unhandled event type ${event.type}`);
+    }
+    res.send();
   } catch (error: any) {
     onError(error, req, res)
   }
