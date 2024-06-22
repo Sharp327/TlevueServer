@@ -35,7 +35,7 @@ export const getProductsByCategoryController = async (
   res: Response
 ) => {
   try {
-    const products = await getProductsByCategoryService(req.body.filterData)
+  const products = await getProductsByCategoryService(req.body.filterData)
     return res.status(201).json({
       products,
     })

@@ -33,17 +33,29 @@ export const getProductsByCategoryRepository = async (filterData: { pricemin: an
   }
 
   type QueryType = {
-    categorylist: {
+    categorylist?: {
       $in: any[];
     };
     $or?: any[]; // Make the `$or` property optional
   };
 
-  const query: QueryType = {
-    categorylist: {
+  // const query: QueryType = {
+  //   categorylist: {
+  //     $in: categoryList, // Primary condition
+  //   },
+  // };
+
+  const query: QueryType = {};
+
+  if(categoryList.length > 0){
+    conditions.push({categorylist : {
       $in: categoryList, // Primary condition
-    },
-  };
+    }})
+    // query.categorylist = {
+    //   $in: categoryList, // Primary condition
+    // };
+  }
+
 
   if (conditions.length > 0) {
     query.$or = conditions; // Add the $or condition only if there are conditions to apply
@@ -90,6 +102,11 @@ export const insertProduct = async () => {
         'You’re Extraordinary',
         'Not You Feeling Cautee',
         '4 the Love of ME',
+        'Aromatic Candles',
+        'Aromatic Classics',
+        'Aromatic Sets',
+        'Aromatic Accessories',
+        'New Releases'
       ],
       createdAt: new Date(),
     });

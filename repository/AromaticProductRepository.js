@@ -39,11 +39,20 @@ const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0
     if (colorList.length > 0) {
         conditions.push({ color: { $in: colorList } });
     }
-    const query = {
-        categorylist: {
-            $in: categoryList, // Primary condition
-        },
-    };
+    // const query: QueryType = {
+    //   categorylist: {
+    //     $in: categoryList, // Primary condition
+    //   },
+    // };
+    const query = {};
+    if (categoryList.length > 0) {
+        conditions.push({ categorylist: {
+                $in: categoryList, // Primary condition
+            } });
+        // query.categorylist = {
+        //   $in: categoryList, // Primary condition
+        // };
+    }
     if (conditions.length > 0) {
         query.$or = conditions; // Add the $or condition only if there are conditions to apply
     }
@@ -87,6 +96,11 @@ const insertProduct = () => __awaiter(void 0, void 0, void 0, function* () {
                 'You’re Extraordinary',
                 'Not You Feeling Cautee',
                 '4 the Love of ME',
+                'Aromatic Candles',
+                'Aromatic Classics',
+                'Aromatic Sets',
+                'Aromatic Accessories',
+                'New Releases'
             ],
             createdAt: new Date(),
         });
