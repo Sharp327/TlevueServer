@@ -335,7 +335,7 @@ const seedData = async () => {
     
     const aromaticMenuData = [
       {
-        title: "Home",
+        title: "VUE Aromatics",
         type: "sub",
         megaMenu: true,
         children: [
@@ -344,9 +344,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "signature candles",
-                title: "signature candles",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/1630038-1",
+                path: "Coolheaded",
+                title: "Coolheaded",
+                img: "/images/All candles/molds/VUE Aromatics/Coolheaded/1.jpg",
                 type: "link"
               }
             ]
@@ -356,9 +356,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "original candle jars",
-                title: "original candle jars",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/211666520_109_r1_cropped",
+                path: "Ease",
+                title: "Ease",
+                img: "/images/All candles/molds/VUE Aromatics/Ease/1.jpg",
                 type: "link"
               }
             ]
@@ -368,9 +368,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "3 wick collection",
-                title: "3 wick collection",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/201375664_HF_YC_Fragrance2D_LemonLavender_R4F_NO-Candle",
+                path: "Exhale",
+                title: "Exhale",
+                img: "/images/All candles/molds/VUE Aromatics/Exhale/1.jpg",
                 type: "link"
               }
             ]
@@ -380,9 +380,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "single wick collection",
-                title: "single wick collection",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/1630038_1-1",
+                path: "Poised",
+                title: "Poised",
+                img: "/images/All candles/molds/VUE Aromatics/Poised/1.jpg",
                 type: "link"
               }
             ]
@@ -392,9 +392,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "seasonal candles",
-                title: "seasonal candles",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/21165049_001_R1_cropped",
+                path: "Serenity",
+                title: "Serenity",
+                img: "/images/All candles/molds/VUE Aromatics/Serenity/1.jpg",
                 type: "link"
               }
             ]
@@ -404,9 +404,21 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "outdoor candles",
-                title: "outdoor candles",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/1630038-1",
+                path: "Suave",
+                title: "Suave",
+                img: "/images/All candles/molds/VUE Aromatics/Suave/1.jpg",
+                type: "link"
+              }
+            ]
+          },
+          {
+            title: "",
+            type: "sub",
+            children: [
+              {
+                path: "Unruffled",
+                title: "Unruffled",
+                img: "/images/All candles/molds/VUE Aromatics/Unruffled/1.jpg",
                 type: "link"
               }
             ]
@@ -414,7 +426,7 @@ const seedData = async () => {
         ]
       },
       {
-        title: "Original Jars Candles",
+        title: "Aromatic YOU",
         type: "sub",
         megaMenu: true,
         children: [
@@ -423,9 +435,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "Not You Feeling Cautee",
-                title: "Not You Feeling Cautee",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/1630038-1",
+                path: "Not You Feeling CAUTEE",
+                title: "Not You Feeling CAUTEE",
+                img: "/images/All candles/molds/Aromatic YOU/Not You Feeling CAUTEE/1.jpg",
                 type: "link"
               }
             ]
@@ -437,7 +449,7 @@ const seedData = async () => {
               {
                 path: "4 the Love of ME",
                 title: "4 the Love of ME",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/211666520_109_r1_cropped",
+                img: "/images/All candles/molds/Aromatic YOU/4 the Love of ME…thats all/1.jpg",
                 type: "link"
               }
             ]
@@ -449,7 +461,7 @@ const seedData = async () => {
               {
                 path: "Empowered & Endowed",
                 title: "Empowered & Endowed",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/201375664_HF_YC_Fragrance2D_LemonLavender_R4F_NO-Candle",
+                img: "/images/All candles/molds/Aromatic YOU/No Stress Zone!/1.jpg",
                 type: "link"
               }
             ]
@@ -461,7 +473,7 @@ const seedData = async () => {
               {
                 path: "You’re Extraordinary",
                 title: "You’re Extraordinary",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/1630038_1-1",
+                img: "/images/All candles/molds/Aromatic YOU/You’re Extraordinary/1.jpg",
                 type: "link"
               }
             ]
@@ -471,9 +483,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "Today, choose Happiness",
-                title: "Today, choose Happiness",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/21165049_001_R1_cropped",
+                path: "Today, Choose Happiness",
+                title: "Today, Choose Happiness",
+                img: "/images/All candles/molds/Aromatic YOU/Today, Choose Happiness/1.jpg",
                 type: "link"
               }
             ]
@@ -485,7 +497,7 @@ const seedData = async () => {
               {
                 path: "Devoted to Peace",
                 title: "Devoted to Peace",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/1630038-1",
+                img: "/images/All candles/molds/Aromatic YOU/4 the Love of ME…thats all/1.jpg",
                 type: "link"
               }
             ]
@@ -497,7 +509,7 @@ const seedData = async () => {
               {
                 path: "No Stress Zone",
                 title: "No Stress Zone",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/21165049_001_R1_cropped",
+                img: "/images/All candles/molds/Aromatic YOU/No Stress Zone!/1.jpg",
                 type: "link"
               }
             ]
@@ -505,7 +517,7 @@ const seedData = async () => {
         ]
       },
       {
-        title: "Aromatic Mold Candles",
+        title: "Aromatic Molds",
         type: "sub",
         megaMenu: true,
         children: [
@@ -516,7 +528,7 @@ const seedData = async () => {
               {
                 path: "Bubble Yum",
                 title: "Bubble Yum",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/1630038-1",
+                img: "/images/All candles/molds/Aromatic Molds/Bubble Yum/Coolheaded/1.jpg",
                 type: "link"
               }
             ]
@@ -528,7 +540,7 @@ const seedData = async () => {
               {
                 path: "NU-NU’s",
                 title: "NU-NU’s",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/211666520_109_r1_cropped",
+                img: "/images/All candles/molds/Aromatic Molds/NU-NU’S/Coolheaded/1.jpg",
                 type: "link"
               }
             ]
@@ -540,7 +552,7 @@ const seedData = async () => {
               {
                 path: "Peachy VUE",
                 title: "Peachy VUE",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/201375664_HF_YC_Fragrance2D_LemonLavender_R4F_NO-Candle",
+                img: "/images/All candles/molds/Aromatic Molds/Peachy VUE/Coolheaded/1.jpg",
                 type: "link"
               }
             ]
@@ -552,7 +564,7 @@ const seedData = async () => {
               {
                 path: "TLé Shells",
                 title: "TLé Shells",
-                "img": "https://s7d9.scene7.com/is/image/YankeeCandle/1630038_1-1",
+                img: "/images/All candles/molds/Aromatic Molds/TLé Shells/Coolheaded/1.jpg",
                 type: "link"
               }
             ]
@@ -571,7 +583,7 @@ const seedData = async () => {
               {
                 path: "Fall",
                 title: "Fall",
-                "img": "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Fall?fmt=jpeg",
+                img: "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Fall?fmt=jpeg",
                 type: "link"
               }
             ]
@@ -583,7 +595,7 @@ const seedData = async () => {
               {
                 path: "Spring",
                 title: "Spring",
-                "img": "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Winter?fmt=jpeg",
+                img: "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Winter?fmt=jpeg",
                 type: "link"
               }
             ]
@@ -595,7 +607,7 @@ const seedData = async () => {
               {
                 path: "Summer",
                 title: "Summer",
-                "img": "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Spring?fmt=jpeg",
+                img: "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Spring?fmt=jpeg",
                 type: "link"
               }
             ]
@@ -607,7 +619,7 @@ const seedData = async () => {
               {
                 path: "Winter",
                 title: "Winter",
-                "img": "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Summer?fmt=jpeg",
+                img: "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Summer?fmt=jpeg",
                 type: "link"
               }
             ]
@@ -624,9 +636,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "Empowered & Endowed",
-                title: "Empowered & Endowed",
-                "img": "https://yankeecandle.scene7.com/is/image/YankeeCandle/233405224_1748810?wid=400&hei=400",
+                path: "Coolheaded",
+                title: "Coolheaded",
+                img: "/images/All candles/molds/VUE Aromatics/Coolheaded/1.jpg",
                 type: "link"
               }
             ]
@@ -636,9 +648,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "You’re Extraordinary",
-                title: "You’re Extraordinary",
-                "img": "https://yankeecandle.scene7.com/is/image/YankeeCandle/233405224_1748814?wid=400&hei=400",
+                path: "Ease",
+                title: "Ease",
+                img: "/images/All candles/molds/VUE Aromatics/Ease/1.jpg",
                 type: "link"
               }
             ]
@@ -648,9 +660,9 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "Not You Feeling Cautee",
-                title: "Not You Feeling Cautee",
-                "img": "https://yankeecandle.scene7.com/is/image/YankeeCandle/1516476_silho?wid=400&hei=400",
+                path: "Exhale",
+                title: "Exhale",
+                img: "/images/All candles/molds/VUE Aromatics/Exhale/1.jpg",
                 type: "link"
               }
             ]
@@ -660,9 +672,45 @@ const seedData = async () => {
             type: "sub",
             children: [
               {
-                path: "4 the Love of ME",
-                title: "4 the Love of ME",
-                "img": "https://yankeecandle.scene7.com/is/image/YankeeCandle/1633209?wid=400&hei=400",
+                path: "Poised",
+                title: "Poised",
+                img: "/images/All candles/molds/VUE Aromatics/Poised/1.jpg",
+                type: "link"
+              }
+            ]
+          },
+          {
+            title: "",
+            type: "sub",
+            children: [
+              {
+                path: "Serenity",
+                title: "Serenity",
+                img: "/images/All candles/molds/VUE Aromatics/Serenity/1.jpg",
+                type: "link"
+              }
+            ]
+          },
+          {
+            title: "",
+            type: "sub",
+            children: [
+              {
+                path: "Suave",
+                title: "Suave",
+                img: "/images/All candles/molds/VUE Aromatics/Suave/1.jpg",
+                type: "link"
+              }
+            ]
+          },
+          {
+            title: "",
+            type: "sub",
+            children: [
+              {
+                path: "Unruffled",
+                title: "Unruffled",
+                img: "/images/All candles/molds/VUE Aromatics/Unruffled/1.jpg",
                 type: "link"
               }
             ]
