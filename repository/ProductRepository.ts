@@ -73,7 +73,7 @@ export const getProductsByCategoryRepository = async (filterData: { laceTexture:
   }
   console.log(query);
   // Query the products with the appropriate conditions
-  const products = await Product.find(query);
+  const products = await Product.find(query).limit(20);
 
   return products
 }

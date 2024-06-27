@@ -335,7 +335,7 @@ const seedData = async () => {
     
     const aromaticMenuData = [
       {
-        title: "VUE Aromatics",
+        title: "Aromatic Candles",
         type: "sub",
         megaMenu: true,
         children: [
@@ -426,7 +426,7 @@ const seedData = async () => {
         ]
       },
       {
-        title: "Aromatic YOU",
+        title: "Aromatic Classics",
         type: "sub",
         megaMenu: true,
         children: [
@@ -517,7 +517,7 @@ const seedData = async () => {
         ]
       },
       {
-        title: "Aromatic Molds",
+        title: "Aromatic Sets",
         type: "sub",
         megaMenu: true,
         children: [
@@ -572,7 +572,7 @@ const seedData = async () => {
         ]
       },
       {
-        title: "Aromatic Season",
+        title: "Aromatic Accessories",
         type: "sub",
         megaMenu: true,
         children: [
@@ -627,7 +627,7 @@ const seedData = async () => {
         ]
       },
       {
-        title: "Aromatic Refills",
+        title: "New Releases",
         type: "sub",
         megaMenu: true,
         children: [
@@ -818,9 +818,9 @@ const seedData = async () => {
       }
     ];
 
-    await saveMenuData(deluxMenuData, 'deluxe');
+    // await saveMenuData(deluxMenuData, 'deluxe');
     await saveMenuData(aromaticMenuData, 'aromatic');
-    await saveMenuData(steadingMenuData, 'steading');
+    // await saveMenuData(steadingMenuData, 'steading');
 
   } catch (error: any) {
     console.error('Error during seeding:', error);

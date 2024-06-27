@@ -62,7 +62,7 @@ export const getProductsByCategoryRepository = async (filterData: { pricemin: an
   }
 
   // Query the products with the appropriate conditions
-  const products = await AromaticProduct.find(query);
+  const products = await AromaticProduct.find(query).limit(20);
 
   return products
 }

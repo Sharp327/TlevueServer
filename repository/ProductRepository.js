@@ -68,7 +68,7 @@ const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0
     }
     console.log(query);
     // Query the products with the appropriate conditions
-    const products = yield product_1.default.find(query);
+    const products = yield product_1.default.find(query).limit(20);
     return products;
 });
 exports.getProductsByCategoryRepository = getProductsByCategoryRepository;

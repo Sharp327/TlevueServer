@@ -348,7 +348,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
         ];
         const aromaticMenuData = [
             {
-                title: "VUE Aromatics",
+                title: "Aromatic Candles",
                 type: "sub",
                 megaMenu: true,
                 children: [
@@ -439,7 +439,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                 ]
             },
             {
-                title: "Aromatic YOU",
+                title: "Aromatic Classics",
                 type: "sub",
                 megaMenu: true,
                 children: [
@@ -530,7 +530,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                 ]
             },
             {
-                title: "Aromatic Molds",
+                title: "Aromatic Sets",
                 type: "sub",
                 megaMenu: true,
                 children: [
@@ -585,7 +585,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                 ]
             },
             {
-                title: "Aromatic Season",
+                title: "Aromatic Accessories",
                 type: "sub",
                 megaMenu: true,
                 children: [
@@ -640,7 +640,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                 ]
             },
             {
-                title: "Aromatic Refills",
+                title: "New Releases",
                 type: "sub",
                 megaMenu: true,
                 children: [

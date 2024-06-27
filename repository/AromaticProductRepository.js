@@ -57,7 +57,7 @@ const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0
         query.$or = conditions; // Add the $or condition only if there are conditions to apply
     }
     // Query the products with the appropriate conditions
-    const products = yield aromaticProduct_1.default.find(query);
+    const products = yield aromaticProduct_1.default.find(query).limit(20);
     return products;
 });
 exports.getProductsByCategoryRepository = getProductsByCategoryRepository;
