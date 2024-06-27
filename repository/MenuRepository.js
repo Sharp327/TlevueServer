@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMenuRepository = void 0;
 const menu_1 = __importDefault(require("../models/menu"));
 const getMenuRepository = (pagetype) => __awaiter(void 0, void 0, void 0, function* () {
-    seedData();
+    // seedData();
     const Menus = yield menu_1.default.find({ pagetype: pagetype });
     return Menus;
 });

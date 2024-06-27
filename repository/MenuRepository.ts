@@ -2,7 +2,7 @@ import { ParsedQs } from 'qs';
 import Menu from '../models/menu'
 
 export const getMenuRepository = async (pagetype: string | ParsedQs | string[] | ParsedQs[] | undefined) => {
-  seedData();
+  // seedData();
   const Menus = await Menu.find({pagetype: pagetype})
   return Menus
 }
