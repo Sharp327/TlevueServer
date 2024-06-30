@@ -3,7 +3,7 @@ import { getProductsByCategoryController, getProductController, getProductsContr
 
 const router = Router();
 
-router.post('/bycategory', getProductsByCategoryController);
+router.post('/byCategory', getProductsByCategoryController);
 router.get('/products/:id', getProductController);
 router.post('/products', getProductsController);
 router.put('/products/:id', putProductsController);

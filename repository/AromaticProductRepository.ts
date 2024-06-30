@@ -104,7 +104,7 @@ const categorylist = [
   },
   {
     title:'4 the Love of ME',
-    img:'/images/All candles/molds/Aromatic YOU/4 the Love of ME…thats all/1.jpg'
+    img:'/images/All candles/molds/Aromatic YOU/4 the Love of ME thats all/1.jpg'
   },
   {
     title:'No Stress Zone',
@@ -120,31 +120,31 @@ const categorylist = [
   },
   {
     title:'You’re Extraordinary',
-    img:'/images/All candles/molds/Aromatic YOU/You’re Extraordinary/1.jpg'
+    img:'/images/All candles/molds/Aromatic YOU/You are Extraordinary/1.jpg'
   },
   {
     title: 'Today, Choose Happiness',
-    img:'/images/All candles/molds/Aromatic YOU/Today, Choose Happiness/1.jpg'
+    img:'/images/All candles/molds/Aromatic YOU/Today Choose Happiness/1.jpg'
   },
   {
     title:'Fall',
-    img:'/images/All candles/molds/Aromatic YOU/Today, Choose Happiness/1.jpg'
+    img:'/images/All candles/molds/Aromatic YOU/Today Choose Happiness/1.jpg'
   },
   {
     title:'Spring',
-    img:'/images/All candles/molds/Aromatic YOU/Today, Choose Happiness/1.jpg'
+    img:'/images/All candles/molds/Aromatic YOU/Today Choose Happiness/1.jpg'
   },
   {
     title:'Summer',
-    img:'/images/All candles/molds/Aromatic YOU/Today, Choose Happiness/1.jpg'
+    img:'/images/All candles/molds/Aromatic YOU/Today Choose Happiness/1.jpg'
   },
   {
     title:'Winter',
-    img:'/images/All candles/molds/Aromatic YOU/Today, Choose Happiness/1.jpg'
+    img:'/images/All candles/molds/Aromatic YOU/Today Choose Happiness/1.jpg'
   },
   {
     title:'NU-NU’S',
-    img:'/images/All candles/molds/Aromatic Molds/NU-NU’S/Coolheaded/1.jpg'
+    img:'/images/All candles/molds/Aromatic Molds/NU-NUS/Coolheaded/1.jpg'
   },
   {
     title:'Peachy VUE',

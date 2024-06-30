@@ -1,6 +1,7 @@
 import { getProductService, getProductsService, getProductsByCategoryService } from '../services/AromaticProductService'
 import { Request, Response } from 'express'
 import onError from '../middlewares/errors'
+import AromaticProduct from '../models/aromaticProduct'
 
 export const getProductController = async (
   req: Request,
@@ -25,6 +26,25 @@ export const getProductsController = async (
     return res.status(201).json({
       products,
     })
+  } catch (error: any) {
+    onError(error, req, res)
+  }
+}
+
+export const putProductsController = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const { id } = req.params;
+    const productData = req.body;
+    const updatedProduct = await AromaticProduct.findByIdAndUpdate(id, productData, { new: true });
+
+    if (!updatedProduct) {
+      return res.status(404).send({ error: 'Product not found' });
+    }
+
+    res.status(200).send({ product: updatedProduct });
   } catch (error: any) {
     onError(error, req, res)
   }

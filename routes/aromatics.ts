@@ -1,10 +1,11 @@
 import { Router } from 'express';
-import { getProductsByCategoryController, getProductController, getProductsController } from '../controllers/AromaticProductController';
+import { getProductsByCategoryController, getProductController, getProductsController, putProductsController } from '../controllers/AromaticProductController';
 
 const router = Router();
 
 router.post('/byCategory', getProductsByCategoryController);
 router.get('/products/:id', getProductController);
 router.post('/products', getProductsController);
+router.put('/products/:id', putProductsController);
 
 export default router;

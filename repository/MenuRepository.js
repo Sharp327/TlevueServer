@@ -462,7 +462,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "4 the Love of ME",
                                 title: "4 the Love of ME",
-                                img: "/images/All candles/molds/Aromatic YOU/4 the Love of ME…thats all/1.jpg",
+                                img: "/images/All candles/molds/Aromatic YOU/4 the Love of ME thats all/1.jpg",
                                 type: "link"
                             }
                         ]
@@ -486,7 +486,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "You’re Extraordinary",
                                 title: "You’re Extraordinary",
-                                img: "/images/All candles/molds/Aromatic YOU/You’re Extraordinary/1.jpg",
+                                img: "/images/All candles/molds/Aromatic YOU/You are Extraordinary/1.jpg",
                                 type: "link"
                             }
                         ]
@@ -498,7 +498,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "Today, Choose Happiness",
                                 title: "Today, Choose Happiness",
-                                img: "/images/All candles/molds/Aromatic YOU/Today, Choose Happiness/1.jpg",
+                                img: "/images/All candles/molds/Aromatic YOU/Today Choose Happiness/1.jpg",
                                 type: "link"
                             }
                         ]
@@ -510,7 +510,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "Devoted to Peace",
                                 title: "Devoted to Peace",
-                                img: "/images/All candles/molds/Aromatic YOU/4 the Love of ME…thats all/1.jpg",
+                                img: "/images/All candles/molds/Aromatic YOU/4 the Love of ME thats all/1.jpg",
                                 type: "link"
                             }
                         ]
@@ -553,7 +553,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "NU-NU’s",
                                 title: "NU-NU’s",
-                                img: "/images/All candles/molds/Aromatic Molds/NU-NU’S/Coolheaded/1.jpg",
+                                img: "/images/All candles/molds/Aromatic Molds/NU-NUS/Coolheaded/1.jpg",
                                 type: "link"
                             }
                         ]
@@ -596,7 +596,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "Fall",
                                 title: "Fall",
-                                img: "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Fall?fmt=jpeg",
+                                img: "/images/All candles/molds/VUE Aromatics/Unruffled/1.jpg",
                                 type: "link"
                             }
                         ]
@@ -608,7 +608,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "Spring",
                                 title: "Spring",
-                                img: "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Winter?fmt=jpeg",
+                                img: "/images/All candles/molds/VUE Aromatics/Unruffled/1.jpg",
                                 type: "link"
                             }
                         ]
@@ -620,7 +620,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "Summer",
                                 title: "Summer",
-                                img: "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Spring?fmt=jpeg",
+                                img: "/images/All candles/molds/VUE Aromatics/Unruffled/1.jpg",
                                 type: "link"
                             }
                         ]
@@ -632,7 +632,7 @@ const seedData = () => __awaiter(void 0, void 0, void 0, function* () {
                             {
                                 path: "Winter",
                                 title: "Winter",
-                                img: "https://yankeecandle.scene7.com/is/image/YankeeCandle/PLP_Images_Summer?fmt=jpeg",
+                                img: "/images/All candles/molds/VUE Aromatics/Unruffled/1.jpg",
                                 type: "link"
                             }
                         ]
