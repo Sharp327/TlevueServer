@@ -22,7 +22,7 @@ export const getProductsController = async (
   res: Response
 ) => {
   try {
-    const products = await getProductsService()
+    const products = await getProductsService(req.body.page)
     return res.status(201).json({
       products,
     })

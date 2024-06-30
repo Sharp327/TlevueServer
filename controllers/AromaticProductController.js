@@ -12,9 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProductsByCategoryController = exports.getProductsController = exports.getProductController = void 0;
+exports.getProductsByCategoryController = exports.putProductsController = exports.getProductsController = exports.getProductController = void 0;
 const AromaticProductService_1 = require("../services/AromaticProductService");
 const errors_1 = __importDefault(require("../middlewares/errors"));
+const aromaticProduct_1 = __importDefault(require("../models/aromaticProduct"));
 const getProductController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const product = yield (0, AromaticProductService_1.getProductService)(req.params.id);
@@ -29,7 +30,7 @@ const getProductController = (req, res) => __awaiter(void 0, void 0, void 0, fun
 exports.getProductController = getProductController;
 const getProductsController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const products = yield (0, AromaticProductService_1.getProductsService)();
+        const products = yield (0, AromaticProductService_1.getProductsService)(req.body.page);
         return res.status(201).json({
             products,
         });
@@ -39,6 +40,21 @@ const getProductsController = (req, res) => __awaiter(void 0, void 0, void 0, fu
     }
 });
 exports.getProductsController = getProductsController;
+const putProductsController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        const productData = req.body;
+        const updatedProduct = yield aromaticProduct_1.default.findByIdAndUpdate(id, productData, { new: true });
+        if (!updatedProduct) {
+            return res.status(404).send({ error: 'Product not found' });
+        }
+        res.status(200).send({ product: updatedProduct });
+    }
+    catch (error) {
+        (0, errors_1.default)(error, req, res);
+    }
+});
+exports.putProductsController = putProductsController;
 const getProductsByCategoryController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const products = yield (0, AromaticProductService_1.getProductsByCategoryService)(req.body.filterData);

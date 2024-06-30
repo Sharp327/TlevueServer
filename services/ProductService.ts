@@ -6,8 +6,8 @@ export const getProductService = async (id: string | ParsedQs | string[] | Parse
   return newProduct
 }
 
-export const getProductsService = async () => {
-  const newProducts = await getProductsRepository()
+export const getProductsService = async (page: string) => {
+  const newProducts = await getProductsRepository(page)
   return newProducts
 }
 

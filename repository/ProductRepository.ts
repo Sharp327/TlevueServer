@@ -7,10 +7,23 @@ export const getProductRepository = async (id: string | ParsedQs | string[] | Pa
   return product
 }
 
-export const getProductsRepository = async () => {
-  const products = await Product.find()
-  return products
-}
+
+export const getProductsRepository = async (page: string) => {
+    const limit = 10; // Number of products per page
+    const skip = (parseInt(page) - 1) * limit;
+  
+    const products = await Product.find()
+      .skip(skip)
+      .limit(limit);
+  
+    const totalProducts = await Product.countDocuments();
+    const totalPages = Math.ceil(totalProducts / limit);
+  
+    return {
+      products,
+      totalPages,
+    };
+};
 
 export const getProductsByCategoryRepository = async (filterData: { laceTexture: string; laceSize: string; hairTexture: string; density: string; hairLength: string; hairColor: string; category: string }) => {
   // insertProduct();

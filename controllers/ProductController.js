@@ -30,7 +30,7 @@ const getProductController = (req, res) => __awaiter(void 0, void 0, void 0, fun
 exports.getProductController = getProductController;
 const getProductsController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const products = yield (0, ProductService_1.getProductsService)();
+        const products = yield (0, ProductService_1.getProductsService)(req.body.page);
         return res.status(201).json({
             products,
         });

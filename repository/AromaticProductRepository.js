@@ -19,9 +19,18 @@ const getProductRepository = (id) => __awaiter(void 0, void 0, void 0, function*
     return product;
 });
 exports.getProductRepository = getProductRepository;
-const getProductsRepository = () => __awaiter(void 0, void 0, void 0, function* () {
-    const products = yield aromaticProduct_1.default.find();
-    return products;
+const getProductsRepository = (page) => __awaiter(void 0, void 0, void 0, function* () {
+    const limit = 10; // Number of products per page
+    const skip = (parseInt(page) - 1) * limit;
+    const products = yield aromaticProduct_1.default.find()
+        .skip(skip)
+        .limit(limit);
+    const totalProducts = yield aromaticProduct_1.default.countDocuments();
+    const totalPages = Math.ceil(totalProducts / limit);
+    return {
+        products,
+        totalPages,
+    };
 });
 exports.getProductsRepository = getProductsRepository;
 const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0, void 0, function* () {

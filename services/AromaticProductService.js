@@ -16,8 +16,8 @@ const getProductService = (id) => __awaiter(void 0, void 0, void 0, function* ()
     return newProduct;
 });
 exports.getProductService = getProductService;
-const getProductsService = () => __awaiter(void 0, void 0, void 0, function* () {
-    const newProducts = yield (0, AromaticProductRepository_1.getProductsRepository)();
+const getProductsService = (page) => __awaiter(void 0, void 0, void 0, function* () {
+    const newProducts = yield (0, AromaticProductRepository_1.getProductsRepository)(page);
     return newProducts;
 });
 exports.getProductsService = getProductsService;
