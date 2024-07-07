@@ -13,18 +13,18 @@ const dbConnect = async () => {
     await mongoose.connect(mongodbUri);
     console.log('Connected to MongoDB');
 
-    // const products = await Product.find({});
+    const products = await Product.find({});
 
-    // for (const product of products) {
-    //   const deluxeProduct = new DeluxeProduct({
-    //     ...product,
-    //     length: product['length']?product['length'].map(value => ({ value, price: '0' })):[],
-    //     closureLength: product['closureLength']?product['closureLength'].map(value => ({ value, price: '0' })):[],
-    //     frontalLength: product['frontalLength']?product['frontalLength'].map(value => ({ value, price: '0' })):[],
-    //     capSize: product['capSize']?product['capSize'].map(value => ({ value, price: '0' })):[],
-    //   })
-    //   await deluxeProduct.save();
-    // }
+    for (const product of products) {
+      const deluxeProduct = new DeluxeProduct({
+        ...product,
+        length: product['length']?product['length'].map(value => ({ value, price: '0' })):[],
+        closureLength: product['closureLength']?product['closureLength'].map(value => ({ value, price: '0' })):[],
+        frontalLength: product['frontalLength']?product['frontalLength'].map(value => ({ value, price: '0' })):[],
+        capSize: product['capSize']?product['capSize'].map(value => ({ value, price: '0' })):[],
+      })
+      await deluxeProduct.save();
+    }
 
     console.log('Data migration completed successfully.');
   } catch (error) {
