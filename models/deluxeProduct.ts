@@ -1,7 +1,7 @@
-import mongoose, { Schema, Model } from 'mongoose'
+import mongoose, { Schema, Model } from 'mongoose';
 import { DeluxeProduct } from '../types/DeluxeProduct';
 
-const DeluxeProductSchema: Schema<DeluxeProduct> = new Schema({
+const deluxeProductSchema: Schema<DeluxeProduct> = new Schema({
   title: {
     type: String,
     required: [true, 'Please enter your title'],
@@ -17,7 +17,7 @@ const DeluxeProductSchema: Schema<DeluxeProduct> = new Schema({
   },
   price: {
     type: String,
-    default: 0,
+    default: '0',
   },
   new: {
     type: Boolean,
@@ -35,12 +35,14 @@ const DeluxeProductSchema: Schema<DeluxeProduct> = new Schema({
     type: Number,
     default: 0,
   },
-  images: Array<{
-    image_id: Number,
-    id: Number,
-    alt: String,
-    src: String,
-  }>,
+  images: [
+    {
+      image_id: Number,
+      id: Number,
+      alt: String,
+      src: String,
+    },
+  ],
   qty: {
     type: Number,
     default: 0,
@@ -53,12 +55,12 @@ const DeluxeProductSchema: Schema<DeluxeProduct> = new Schema({
     type: Number,
     default: 0,
   },
-  laceType: Array<String>,
+  laceType: [String],
   selectedLaceType: {
     type: String,
   },
-  laceSize: Array<String>,
-  destiny: Array<String>,
+  laceSize: [String],
+  destiny: [String],
   selectedDestiny: {
     type: String,
   },
@@ -66,27 +68,47 @@ const DeluxeProductSchema: Schema<DeluxeProduct> = new Schema({
     type: String,
     default: 'Natural Color',
   },
-  availableTextures: Array<String>,
+  availableTextures: [String],
   texture: {
     type: String,
     default: 'HD Lace',
   },
-  length: Array<{value: String, price: String}>,
+  length: [
+    {
+      value: String,
+      price: String,
+    },
+  ],
   selectedLength: {
     type: String,
     default: '',
   },
-  closureLength: Array<{value: String, price: String}>,
+  closureLength: [
+    {
+      value: String,
+      price: String,
+    },
+  ],
   selectedClosureLength: {
     type: String,
     default: '',
   },
-  frontalLength: Array<{value: String, price: String}>,
+  frontalLength: [
+    {
+      value: String,
+      price: String,
+    },
+  ],
   selectedFrontalLength: {
     type: String,
     default: '',
   },
-  capSize: Array<{value: String, price: String}>,
+  capSize: [
+    {
+      value: String,
+      price: String,
+    },
+  ],
   selectedCapSize: {
     type: String,
     default: '',
@@ -95,13 +117,14 @@ const DeluxeProductSchema: Schema<DeluxeProduct> = new Schema({
     type: String,
     default: '100% Virgin Human Hair',
   },
-  categorylist: Array<String>,
+  categorylist: [String],
   createdAt: {
     type: Date,
     default: Date.now,
   },
-})
+});
 
 const DeluxeProduct: Model<DeluxeProduct> =
-  mongoose.models.DeluxeProduct || mongoose.model<DeluxeProduct>('DeluxeProduct', DeluxeProductSchema)
-export default DeluxeProduct
+  mongoose.models.DeluxeProduct || mongoose.model<DeluxeProduct>('DeluxeProduct', deluxeProductSchema);
+
+export default DeluxeProduct;

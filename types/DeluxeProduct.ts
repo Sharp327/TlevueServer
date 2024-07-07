@@ -1,15 +1,15 @@
 interface VariantType {
-  variant_id: Number;
-  id: Number;
+  variant_id: number;
+  id: number;
   sku: string;
   size?: string;
   color?: string;
-  image_id: Number;
+  image_id: number;
 }
 
 interface ImageType {
-  image_id: Number;
-  id: Number;
+  image_id: number;
+  id: number;
   alt: string;
   src: string;
 }
@@ -32,15 +32,15 @@ type DeluxeProduct = {
   qty: number;
   total: number;
   rate: number;
-  laceType: Array<String>;
+  laceType: string[];
   selectedLaceType: string;
-  laceSize: String;
-  destiny: Array<String>;
+  laceSize: string[];
+  destiny: string[];
   selectedDestiny: string;
   length?: { value: string; price: string }[];
   selectedLength: string;
   color: string;
-  availableTextures: Array<String>;
+  availableTextures: string[];
   texture: string;
   closureLength?: { value: string; price: string }[];
   selectedClosureLength: string;

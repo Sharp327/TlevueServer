@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const DeluxeProductSchema = new mongoose_1.Schema({
+const deluxeProductSchema = new mongoose_1.Schema({
     title: {
         type: String,
         required: [true, 'Please enter your title'],
@@ -40,7 +40,7 @@ const DeluxeProductSchema = new mongoose_1.Schema({
     },
     price: {
         type: String,
-        default: 0,
+        default: '0',
     },
     new: {
         type: Boolean,
@@ -58,7 +58,14 @@ const DeluxeProductSchema = new mongoose_1.Schema({
         type: Number,
         default: 0,
     },
-    images: (Array),
+    images: [
+        {
+            image_id: Number,
+            id: Number,
+            alt: String,
+            src: String,
+        },
+    ],
     qty: {
         type: Number,
         default: 0,
@@ -71,12 +78,12 @@ const DeluxeProductSchema = new mongoose_1.Schema({
         type: Number,
         default: 0,
     },
-    laceType: (Array),
+    laceType: [String],
     selectedLaceType: {
         type: String,
     },
-    laceSize: (Array),
-    destiny: (Array),
+    laceSize: [String],
+    destiny: [String],
     selectedDestiny: {
         type: String,
     },
@@ -84,27 +91,47 @@ const DeluxeProductSchema = new mongoose_1.Schema({
         type: String,
         default: 'Natural Color',
     },
-    availableTextures: (Array),
+    availableTextures: [String],
     texture: {
         type: String,
         default: 'HD Lace',
     },
-    length: (Array),
+    length: [
+        {
+            value: String,
+            price: String,
+        },
+    ],
     selectedLength: {
         type: String,
         default: '',
     },
-    closureLength: (Array),
+    closureLength: [
+        {
+            value: String,
+            price: String,
+        },
+    ],
     selectedClosureLength: {
         type: String,
         default: '',
     },
-    frontalLength: (Array),
+    frontalLength: [
+        {
+            value: String,
+            price: String,
+        },
+    ],
     selectedFrontalLength: {
         type: String,
         default: '',
     },
-    capSize: (Array),
+    capSize: [
+        {
+            value: String,
+            price: String,
+        },
+    ],
     selectedCapSize: {
         type: String,
         default: '',
@@ -113,11 +140,11 @@ const DeluxeProductSchema = new mongoose_1.Schema({
         type: String,
         default: '100% Virgin Human Hair',
     },
-    categorylist: (Array),
+    categorylist: [String],
     createdAt: {
         type: Date,
         default: Date.now,
     },
 });
-const DeluxeProduct = mongoose_1.default.models.DeluxeProduct || mongoose_1.default.model('DeluxeProduct', DeluxeProductSchema);
+const DeluxeProduct = mongoose_1.default.models.DeluxeProduct || mongoose_1.default.model('DeluxeProduct', deluxeProductSchema);
 exports.default = DeluxeProduct;
