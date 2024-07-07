@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getProductsByCategoryController = exports.putProductsController = exports.getProductsController = exports.getProductController = void 0;
 const ProductService_1 = require("../services/ProductService");
 const errors_1 = __importDefault(require("../middlewares/errors"));
-const deluxeProduct_1 = __importDefault(require("../models/deluxeProduct"));
+const product_1 = __importDefault(require("../models/product"));
 const getProductController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const product = yield (0, ProductService_1.getProductService)(req.params.id);
@@ -44,7 +44,7 @@ const putProductsController = (req, res) => __awaiter(void 0, void 0, void 0, fu
     try {
         const { id } = req.params;
         const productData = req.body;
-        const updatedProduct = yield deluxeProduct_1.default.findByIdAndUpdate(id, productData, { new: true });
+        const updatedProduct = yield product_1.default.findByIdAndUpdate(id, productData, { new: true });
         if (!updatedProduct) {
             return res.status(404).send({ error: 'Product not found' });
         }

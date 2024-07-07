@@ -80,10 +80,6 @@ const productSchema = new mongoose_1.Schema({
     selectedDestiny: {
         type: String,
     },
-    length: (Array),
-    selectedLength: {
-        type: String,
-    },
     color: {
         type: String,
         default: 'Natural Color',
@@ -93,20 +89,25 @@ const productSchema = new mongoose_1.Schema({
         type: String,
         default: 'HD Lace',
     },
+    length: (Array),
+    selectedLength: {
+        type: String,
+        default: '',
+    },
     closureLength: (Array),
     selectedClosureLength: {
         type: String,
-        default: '14',
+        default: '',
     },
     frontalLength: (Array),
     selectedFrontalLength: {
         type: String,
-        default: '14',
+        default: '',
     },
     capSize: (Array),
     selectedCapSize: {
         type: String,
-        default: '14',
+        default: '',
     },
     hairType: {
         type: String,

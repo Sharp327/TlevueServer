@@ -62,10 +62,6 @@ const productSchema: Schema<Product> = new Schema({
   selectedDestiny: {
     type: String,
   },
-  length: Array<String>,
-  selectedLength: {
-    type: String,
-  },
   color: {
     type: String,
     default: 'Natural Color',
@@ -75,20 +71,25 @@ const productSchema: Schema<Product> = new Schema({
     type: String,
     default: 'HD Lace',
   },
-  closureLength: Array<String>,
+  length: Array<{value: String, price: String}>,
+  selectedLength: {
+    type: String,
+    default: '',
+  },
+  closureLength: Array<{value: String, price: String}>,
   selectedClosureLength: {
     type: String,
-    default: '14',
+    default: '',
   },
-  frontalLength: Array<String>,
+  frontalLength: Array<{value: String, price: String}>,
   selectedFrontalLength: {
     type: String,
-    default: '14',
+    default: '',
   },
-  capSize: Array<String>,
+  capSize: Array<{value: String, price: String}>,
   selectedCapSize: {
     type: String,
-    default: '14',
+    default: '',
   },
   hairType: {
     type: String,

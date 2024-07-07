@@ -13,8 +13,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const product_1 = __importDefault(require("../models/product"));
-const deluxeProduct_1 = __importDefault(require("../models/deluxeProduct"));
 const dbConnect = () => __awaiter(void 0, void 0, void 0, function* () {
     const mongodbUri = process.env.MONGODB_URI;
     if (!mongodbUri) {
@@ -23,11 +21,17 @@ const dbConnect = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield mongoose_1.default.connect(mongodbUri);
         console.log('Connected to MongoDB');
-        const products = yield product_1.default.find({});
-        for (const product of products) {
-            const deluxeProduct = new deluxeProduct_1.default(Object.assign(Object.assign({}, product), { length: product['length'] ? product['length'].map(value => ({ value, price: '0' })) : [], closureLength: product['closureLength'] ? product['closureLength'].map(value => ({ value, price: '0' })) : [], frontalLength: product['frontalLength'] ? product['frontalLength'].map(value => ({ value, price: '0' })) : [], capSize: product['capSize'] ? product['capSize'].map(value => ({ value, price: '0' })) : [] }));
-            yield deluxeProduct.save();
-        }
+        // const products = await Product.find({});
+        // for (const product of products) {
+        //   const deluxeProduct = new DeluxeProduct({
+        //     ...product,
+        //     length: product['length']?product['length'].map(value => ({ value, price: '0' })):[],
+        //     closureLength: product['closureLength']?product['closureLength'].map(value => ({ value, price: '0' })):[],
+        //     frontalLength: product['frontalLength']?product['frontalLength'].map(value => ({ value, price: '0' })):[],
+        //     capSize: product['capSize']?product['capSize'].map(value => ({ value, price: '0' })):[],
+        //   })
+        //   await deluxeProduct.save();
+        // }
         console.log('Data migration completed successfully.');
     }
     catch (error) {

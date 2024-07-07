@@ -1,7 +1,7 @@
 import { getProductService, getProductsService, getProductsByCategoryService } from '../services/ProductService'
 import { Request, Response } from 'express'
 import onError from '../middlewares/errors'
-import Product from '../models/deluxeProduct'
+import Product from '../models/product'
 export const getProductController = async (
   req: Request,
   res: Response
