@@ -1,5 +1,5 @@
 import { Condition, Query } from 'mongoose'
-import Product from '../models/product'
+import Product from '../models/deluxeProduct'
 import { ParsedQs } from 'qs'
 
 export const getProductRepository = async (id: string | ParsedQs | string[] | ParsedQs[] | undefined) => {

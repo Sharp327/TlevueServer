@@ -13,19 +13,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.insertProduct = exports.getProductsByCategoryRepository = exports.getProductsRepository = exports.getProductRepository = void 0;
-const product_1 = __importDefault(require("../models/product"));
+const deluxeProduct_1 = __importDefault(require("../models/deluxeProduct"));
 const getProductRepository = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const product = yield product_1.default.findById(id);
+    const product = yield deluxeProduct_1.default.findById(id);
     return product;
 });
 exports.getProductRepository = getProductRepository;
 const getProductsRepository = (page) => __awaiter(void 0, void 0, void 0, function* () {
     const limit = 10; // Number of products per page
     const skip = (parseInt(page) - 1) * limit;
-    const products = yield product_1.default.find()
+    const products = yield deluxeProduct_1.default.find()
         .skip(skip)
         .limit(limit);
-    const totalProducts = yield product_1.default.countDocuments();
+    const totalProducts = yield deluxeProduct_1.default.countDocuments();
     const totalPages = Math.ceil(totalProducts / limit);
     return {
         products,
@@ -77,14 +77,14 @@ const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0
     }
     console.log(query);
     // Query the products with the appropriate conditions
-    const products = yield product_1.default.find(query).limit(20);
+    const products = yield deluxeProduct_1.default.find(query).limit(20);
     return products;
 });
 exports.getProductsByCategoryRepository = getProductsByCategoryRepository;
 function saveProductData(productData) {
     return __awaiter(this, void 0, void 0, function* () {
         for (const item of productData) {
-            const newproduct = new product_1.default(Object.assign({}, item));
+            const newproduct = new deluxeProduct_1.default(Object.assign({}, item));
             try {
                 yield newproduct.save();
                 console.log(`Saved: ${item.title}`);
