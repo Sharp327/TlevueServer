@@ -57,9 +57,9 @@ const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0
     if (densityList.length > 0) {
         conditions.push({ destiny: { $in: densityList } });
     }
-    if (hairLengthList.length > 0) {
-        conditions.push({ 'length.value': { $in: hairLengthList } });
-    }
+    //   if (hairLengthList.length > 0) {
+    //     conditions.push({ 'length.value': { $in: hairLengthList } });
+    //   }
     if (hairColorList.length > 0) {
         conditions.push({ color: { $in: hairColorList } });
     }

@@ -55,9 +55,9 @@ export const getProductsByCategoryRepository = async (filterData: { laceTexture:
     conditions.push({ destiny: { $in: densityList } });
   }
 
-  if (hairLengthList.length > 0) {
-    conditions.push({ 'length.value': { $in: hairLengthList } });
-  }
+//   if (hairLengthList.length > 0) {
+//     conditions.push({ 'length.value': { $in: hairLengthList } });
+//   }
 
   if (hairColorList.length > 0) {
     conditions.push({ color: { $in: hairColorList } });
