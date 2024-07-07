@@ -26,7 +26,7 @@ export const getProductsRepository = async (page: string) => {
 };
 
 export const getProductsByCategoryRepository = async (filterData: { laceTexture: string; laceSize: string; hairTexture: string; density: string; hairLength: string; hairColor: string; category: string }) => {
-  // insertProduct();
+//   insertProduct();
   // Define the split arrays for additional filtering
   const laceTextureList = filterData.laceTexture ? filterData.laceTexture.split(',') : [];
   const laceSizeList = filterData.laceSize ? filterData.laceSize.split(',') : [];
@@ -56,7 +56,7 @@ export const getProductsByCategoryRepository = async (filterData: { laceTexture:
   }
 
   if (hairLengthList.length > 0) {
-    conditions.push({ length: { $in: hairLengthList } });
+    conditions.push({ 'length.value': { $in: hairLengthList } });
   }
 
   if (hairColorList.length > 0) {

@@ -9,8 +9,27 @@ import userRoutes from './routes/users';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import multer from 'multer';
+import path from 'path';
+import fs from 'fs';
 
 dotenv.config();
+
+// Set up storage engine for multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      const uploadDir = path.join(__dirname, 'uploads');
+      if (!fs.existsSync(uploadDir)) {
+          fs.mkdirSync(uploadDir);
+      }
+      cb(null, uploadDir);
+  },
+  filename: (req, file, cb) => {
+      cb(null, `${Date.now()}-${file.originalname}`);
+  }
+});
+
+const upload = multer({ storage: storage });
 
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
@@ -37,6 +56,18 @@ app.use('/api/steading', steadingRoutes);
 app.use('/api/webhook', checkoutRoutes);
 app.use('/api/menu', menuRoutes);
 app.use('/api/auth', userRoutes);
+
+app.post('/api/upload', upload.single('file'), (req: Request, res: Response) => {
+  if (req.file) {
+      res.json({ url: `/uploads/${req.file.filename}` });
+  } else {
+      res.status(400).json({ error: 'File upload failed' });
+  }
+});
+
+app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
+
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -14,7 +14,24 @@ const users_1 = __importDefault(require("./routes/users"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const cors_1 = __importDefault(require("cors"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const multer_1 = __importDefault(require("multer"));
+const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
 dotenv_1.default.config();
+// Set up storage engine for multer
+const storage = multer_1.default.diskStorage({
+    destination: (req, file, cb) => {
+        const uploadDir = path_1.default.join(__dirname, 'uploads');
+        if (!fs_1.default.existsSync(uploadDir)) {
+            fs_1.default.mkdirSync(uploadDir);
+        }
+        cb(null, uploadDir);
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+const upload = (0, multer_1.default)({ storage: storage });
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 5000;
 app.use(express_1.default.json());
@@ -37,6 +54,15 @@ app.use('/api/steading', steadings_1.default);
 app.use('/api/webhook', checkout_1.default);
 app.use('/api/menu', menu_1.default);
 app.use('/api/auth', users_1.default);
+app.post('/api/upload', upload.single('file'), (req, res) => {
+    if (req.file) {
+        res.json({ url: `/uploads/${req.file.filename}` });
+    }
+    else {
+        res.status(400).json({ error: 'File upload failed' });
+    }
+});
+app.use('/api/uploads', express_1.default.static(path_1.default.join(__dirname, 'uploads')));
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
