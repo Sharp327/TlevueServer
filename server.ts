@@ -49,13 +49,6 @@ app.get('/api/test', (req, res) => {
 // Connect to database
 dbConnect();
 
-// Routes
-app.use('/api/deluxe', deluxeRoutes);
-app.use('/api/aromatic', aromaticRoutes);
-app.use('/api/steading', steadingRoutes);
-app.use('/api/webhook', checkoutRoutes);
-app.use('/api/menu', menuRoutes);
-app.use('/api/auth', userRoutes);
 
 app.post('/api/upload', upload.single('file'), (req: Request, res: Response) => {
   if (req.file) {
@@ -67,7 +60,13 @@ app.post('/api/upload', upload.single('file'), (req: Request, res: Response) => 
 
 app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
 
-
+// Routes
+app.use('/api/deluxe', deluxeRoutes);
+app.use('/api/aromatic', aromaticRoutes);
+app.use('/api/steading', steadingRoutes);
+app.use('/api/webhook', checkoutRoutes);
+app.use('/api/menu', menuRoutes);
+app.use('/api/auth', userRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -97,17 +97,17 @@ const productSchema = new mongoose_1.Schema({
     closureLength: (Array),
     selectedClosureLength: {
         type: String,
-        default: '',
+        default: '14',
     },
     frontalLength: (Array),
     selectedFrontalLength: {
         type: String,
-        default: '',
+        default: '14',
     },
     capSize: (Array),
     selectedCapSize: {
         type: String,
-        default: '',
+        default: '14',
     },
     hairType: {
         type: String,

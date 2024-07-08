@@ -79,17 +79,17 @@ const productSchema: Schema<Product> = new Schema({
   closureLength: Array<{value: String, price: String}>,
   selectedClosureLength: {
     type: String,
-    default: '',
+    default: '14',
   },
   frontalLength: Array<{value: String, price: String}>,
   selectedFrontalLength: {
     type: String,
-    default: '',
+    default: '14',
   },
   capSize: Array<{value: String, price: String}>,
   selectedCapSize: {
     type: String,
-    default: '',
+    default: '14',
   },
   hairType: {
     type: String,

@@ -34,7 +34,7 @@ const getProductsRepository = (page) => __awaiter(void 0, void 0, void 0, functi
 });
 exports.getProductsRepository = getProductsRepository;
 const getProductsByCategoryRepository = (filterData) => __awaiter(void 0, void 0, void 0, function* () {
-    //   insertProduct();
+    // insertProduct();
     // Define the split arrays for additional filtering
     const laceTextureList = filterData.laceTexture ? filterData.laceTexture.split(',') : [];
     const laceSizeList = filterData.laceSize ? filterData.laceSize.split(',') : [];

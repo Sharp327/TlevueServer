@@ -47,13 +47,6 @@ app.get('/api/test', (req, res) => {
 });
 // Connect to database
 (0, dbConnect_1.default)();
-// Routes
-app.use('/api/deluxe', deluxes_1.default);
-app.use('/api/aromatic', aromatics_1.default);
-app.use('/api/steading', steadings_1.default);
-app.use('/api/webhook', checkout_1.default);
-app.use('/api/menu', menu_1.default);
-app.use('/api/auth', users_1.default);
 app.post('/api/upload', upload.single('file'), (req, res) => {
     if (req.file) {
         res.json({ url: `/uploads/${req.file.filename}` });
@@ -63,6 +56,13 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
     }
 });
 app.use('/api/uploads', express_1.default.static(path_1.default.join(__dirname, 'uploads')));
+// Routes
+app.use('/api/deluxe', deluxes_1.default);
+app.use('/api/aromatic', aromatics_1.default);
+app.use('/api/steading', steadings_1.default);
+app.use('/api/webhook', checkout_1.default);
+app.use('/api/menu', menu_1.default);
+app.use('/api/auth', users_1.default);
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
